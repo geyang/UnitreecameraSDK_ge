@@ -17,6 +17,9 @@ target_link_libraries(example_putImagetrans ${SDKLIBS})
 add_executable(example_getimagetrans ./example_getimagetrans.cc)
 target_link_libraries(example_getimagetrans ${SDKLIBS})
 
+# add_executable(lcm_RawFrame_server ./lcm_RawFrame_server.cc)
+# target_link_libraries(lcm_RawFrame_server ${SDKLIBS})
+
 # add_executable(example_share ./example_share.cc)
 # target_link_libraries(example_share ${SDKLIBS})
 
@@ -62,5 +65,6 @@ endif()
 
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
+
 
 

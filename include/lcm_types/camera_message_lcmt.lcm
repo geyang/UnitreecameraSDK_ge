@@ -1,0 +1,4 @@
+struct camera_message_lcmt
+{
+    float q[1
+}

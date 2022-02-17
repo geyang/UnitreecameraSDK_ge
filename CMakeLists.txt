@@ -30,5 +30,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 
 set(SDKLIBS unitree_camera tstc_V4L2_xu_camera udev systemlog ${OpenCV_LIBS})
 
-add_subdirectory(${PROJECT_SOURCE_DIR}/examples)
 
+
+add_subdirectory(${PROJECT_SOURCE_DIR}/examples)
+add_subdirectory(python)
