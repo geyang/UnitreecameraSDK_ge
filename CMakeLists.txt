@@ -17,6 +17,11 @@ else()
     message(FATAL_ERROR "OpenCV Library Not Found")
 endif()
 
+find_package(catkin  REQUIRED COMPONENTS
+  roscpp
+)
+include_directories(include ${catkin_INCLUDE_DIRS} )
+
 if(CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "x86_64")
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib/amd64/)
 link_directories(${PROJECT_SOURCE_DIR}/lib/amd64/)
@@ -33,4 +38,4 @@ set(SDKLIBS unitree_camera tstc_V4L2_xu_camera udev systemlog ${OpenCV_LIBS})
 
 
 add_subdirectory(${PROJECT_SOURCE_DIR}/examples)
-add_subdirectory(python)
+# add_subdirectory(python)

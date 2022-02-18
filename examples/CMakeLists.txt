@@ -1,3 +1,9 @@
+find_package(catkin  REQUIRED COMPONENTS
+  roscpp
+  image_transport
+  cv_bridge
+)
+include_directories(include ${catkin_INCLUDE_DIRS} )
 
 add_executable(example_getRawFrame ./example_getRawFrame.cc)
 target_link_libraries(example_getRawFrame ${SDKLIBS})
@@ -19,6 +25,9 @@ target_link_libraries(example_getimagetrans ${SDKLIBS})
 
 # add_executable(lcm_RawFrame_server ./lcm_RawFrame_server.cc)
 # target_link_libraries(lcm_RawFrame_server ${SDKLIBS})
+
+add_executable(ros_RawFrame_server ./ros_RawFrame_server.cc)
+target_link_libraries(ros_RawFrame_server ${SDKLIBS} ${catkin_LIBRARIES})
 
 # add_executable(example_share ./example_share.cc)
 # target_link_libraries(example_share ${SDKLIBS})
