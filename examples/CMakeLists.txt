@@ -29,6 +29,12 @@ target_link_libraries(example_getRawFrame ${SDKLIBS})
 add_executable(ros_RawFrame_server ./ros_RawFrame_server.cc)
 target_link_libraries(ros_RawFrame_server ${SDKLIBS} ${catkin_LIBRARIES})
 
+add_executable(ros_RectFrame_server ./ros_RectFrame_server.cc)
+target_link_libraries(ros_RectFrame_server ${SDKLIBS} ${catkin_LIBRARIES})
+
+add_executable(ros_DepthFrame_server ./ros_DepthFrame_server.cc)
+target_link_libraries(ros_DepthFrame_server ${SDKLIBS} ${catkin_LIBRARIES})
+
 # add_executable(example_share ./example_share.cc)
 # target_link_libraries(example_share ${SDKLIBS})
 
