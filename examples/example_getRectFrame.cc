@@ -14,7 +14,7 @@
 int main(int argc, char *argv[]){
     
     int deviceNode = 0; ///< default 0 -> /dev/video0
-    cv::Size frameSize(1856, 800); ///< default frame size 1856x800
+    cv::Size frameSize(400, 400); ///< default frame size 1856x800
     int fps = 30; ///< default camera fps: 30
     
     if(argc >= 2){
