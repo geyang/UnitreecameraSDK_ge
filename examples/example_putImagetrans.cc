@@ -63,8 +63,23 @@ gateway 192.168.123.1
 */
 int main(int argc, char *argv[])
 {
-   
-    UnitreeCamera cam("trans_rect_config.yaml"); ///< init camera by device node number
+    int deviceNode = 0; // default 0 -> /dev/video0
+    cv::Size frameSize(928, 400); // defalut image size: 1856 X 800
+    int fps = 30;
+
+    if(argc >= 2){
+        deviceNode = std::atoi(argv[1]);
+        if(argc >= 4){
+            frameSize = cv::Size(std::atoi(argv[2]), std::atoi(argv[3]));
+        }
+        if(argc >=5)
+            fps = std::atoi(argv[4]);
+    }
+
+    std::cout << "node " << deviceNode << std::endl;
+	
+    
+    UnitreeCamera cam(deviceNode); //"trans_rect_config.yaml"); ///< init camera by device node number
     if(!cam.isOpened())   ///< get camera open state
         exit(EXIT_FAILURE);   
     cam.startCapture(true,false); ///< disable share memory sharing and able image h264 encoding

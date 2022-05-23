@@ -1,6 +1,8 @@
 cmake_minimum_required( VERSION 2.8 )
 project( UnitreeCameraSDK )
 
+include_directories(include/lcm_types)
+
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bins/)
 
 find_package(OpenCV 4 REQUIRED)
@@ -33,7 +35,7 @@ endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-set(SDKLIBS unitree_camera tstc_V4L2_xu_camera udev systemlog ${OpenCV_LIBS})
+set(SDKLIBS unitree_camera tstc_V4L2_xu_camera udev systemlog ${OpenCV_LIBS} lcm)
 
 
 

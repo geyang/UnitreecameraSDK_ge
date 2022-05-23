@@ -25,14 +25,17 @@ int main(int argc, char *argv[]){
         if(argc >=5)
             fps = std::atoi(argv[4]);
     }
-    
+
+    std::cout << "node " << deviceNode << std::endl;
+
     UnitreeCamera cam(deviceNode);  ///< init camera by device node number
     if(!cam.isOpened())
         exit(EXIT_FAILURE);
     
     cam.setRawFrameSize(frameSize); ///< set camera frame size
     cam.setRawFrameRate(fps);       ///< set camera frame rate
-    
+
+    std::cout << "SANITY" << std::endl;
     std::cout << "Device Position Number:" << cam.getPosNumber() << std::endl;
     
     cam.startCapture();            ///< start camera capturing

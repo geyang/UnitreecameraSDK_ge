@@ -8,6 +8,12 @@ include_directories(include ${catkin_INCLUDE_DIRS} )
 add_executable(example_getRawFrame ./example_getRawFrame.cc)
 target_link_libraries(example_getRawFrame ${SDKLIBS})
 
+add_executable(example_getRawFrameMod ./example_getRawFrameMod.cc)
+target_link_libraries(example_getRawFrameMod ${SDKLIBS} lcm) # ${catkin_LIBRARIES})
+
+add_executable(example_getRawFrameLCM ./example_getRawFrameLCM.cc)
+target_link_libraries(example_getRawFrameLCM ${SDKLIBS}) # ${catkin_LIBRARIES})
+
 # add_executable(example_getDepthFrame ./example_getDepthFrame.cc)
 # target_link_libraries(example_getDepthFrame ${SDKLIBS})
 
@@ -17,11 +23,11 @@ target_link_libraries(example_getRawFrame ${SDKLIBS})
 # add_executable(example_getCalibParamsFile ./example_getCalibParamsFile.cc)
 # target_link_libraries(example_getCalibParamsFile ${SDKLIBS})
 
-# add_executable(example_putImagetrans ./example_putImagetrans.cc)
-# target_link_libraries(example_putImagetrans ${SDKLIBS})
+add_executable(example_putImagetrans ./example_putImagetrans.cc)
+target_link_libraries(example_putImagetrans ${SDKLIBS})
 
-# add_executable(example_getimagetrans ./example_getimagetrans.cc)
-# target_link_libraries(example_getimagetrans ${SDKLIBS})
+add_executable(example_getimagetrans ./example_getimagetrans.cc)
+target_link_libraries(example_getimagetrans ${SDKLIBS})
 
 # add_executable(lcm_RawFrame_server ./lcm_RawFrame_server.cc)
 # target_link_libraries(lcm_RawFrame_server ${SDKLIBS})
